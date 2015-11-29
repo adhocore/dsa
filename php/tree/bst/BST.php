@@ -20,7 +20,7 @@ class BST
 
     public function insert(/* Node */ &$root, $key, $value)
     {
-        if (null !== $root and $root instanceof Node) {
+        if (null !== $root and false === $root instanceof Node) {
             throw new \InvalidArgumentException('The root parameter must be null or instanceof Node');
         }
         if (!$root) {
