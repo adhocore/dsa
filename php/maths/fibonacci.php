@@ -20,6 +20,7 @@ function fibonacci($n)
 
 /**
  * fibonacci_series. https://en.wikipedia.org/wiki/Fibonacci_number
+ * uses static stack ($fs) for memoization to accelerate subsquent calls
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
@@ -29,7 +30,7 @@ function fibonacci($n)
  */
 function fibonacci_series($n)
 {
-    $fs = [0, 1];
+    static $fs = [0, 1];
     if (isset($fs[$n])) {
         return array_slice($fs, 0, $n);
     }
