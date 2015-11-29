@@ -1,6 +1,6 @@
 <?php
 
-namespace DSA\Tree;
+namespace bst;
 
 /**
  * Binary search tree.
