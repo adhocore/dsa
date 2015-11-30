@@ -1,8 +1,10 @@
 <?php
 
-namespace test;
+namespace test\tree;
 
-class SearchTest extends TestCase
+use test\TestCase;
+
+class BstTest extends TestCase
 {
     public function testOk()
     {

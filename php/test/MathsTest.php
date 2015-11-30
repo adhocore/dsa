@@ -11,8 +11,8 @@ class MathsTest extends TestCase
         $this->assertEquals('451', convert_base('1213', 8, 6), 'convert 1213 to base 8 from base 6');
         $this->assertEquals('A', convert_base('10', 16, 10), 'convert 10 to base 16 from base 10');
         $this->assertEquals(
-            base_convert('1111', 2, 10), 
-            convert_base('1111', 10, 2), 
+            base_convert('1111', 2, 10),
+            convert_base('1111', 10, 2),
             'convert 1111 to base 10 from base 2 [assert against native base_convert()]'
         );
     }
@@ -47,7 +47,7 @@ class MathsTest extends TestCase
     {
         $this->load('maths.factorial');
 
-        $this->assertEquals(5*4*3*2*1, factorial(5), 'factorial of 5 (5!)');
+        $this->assertEquals(5 * 4 * 3 * 2 * 1, factorial(5), 'factorial of 5 (5!)');
         $this->assertEquals(40320, factorial(8), 'factorial of 8 (8!)');
     }
 
