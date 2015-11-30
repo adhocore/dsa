@@ -1,6 +1,6 @@
 <?php
 
-namespace datatype;
+namespace data\type;
 
 /**
  * LIFO data type.

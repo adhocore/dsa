@@ -1,6 +1,6 @@
 <?php
 
-namespace datastruct;
+namespace data\struct;
 
 /**
  * Node with data, prev and next attributes.

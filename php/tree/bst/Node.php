@@ -1,6 +1,6 @@
 <?php
 
-namespace treebst;
+namespace tree\bst;
 
 /**
  * Node. Yes it has public attributes.
