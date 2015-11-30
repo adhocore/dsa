@@ -1,6 +1,6 @@
 <?php
 
-namespace bst;
+namespace treebst;
 
 /**
  * Binary search tree.

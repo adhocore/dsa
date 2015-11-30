@@ -45,3 +45,23 @@ function prime($n)
 {
     return end(primes($n));
 }
+
+
+/**
+ * Checks if a number is prime
+ * 
+ * @param  int  $x  
+ * 
+ * @return boolean    True if prime, false otherwise
+ */
+function is_prime($x)
+{
+    $s = round(sqrt($x));
+    for ($i = 2; $i <= $s; $i++) {
+        if ($x % $i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
