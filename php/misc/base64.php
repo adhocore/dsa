@@ -3,13 +3,20 @@
 /**
  * Base64 encode. https://en.wikipedia.org/wiki/Base64
  * 
- * @param  string $str The input string
+ * @param  string $str               The input string
+ * @throws InvalidArgumentException  If input string is invalid
  * 
- * @return string      The base64 encoded string
+ * @return string                    The base64 encoded string
  */
 function base64encode($str)
 {
+    if (!is_scalar($str)) {
+        throw new \InvalidArgumentException(
+            sprintf('base64encode() expects parameter 1 to be string %s given', gettype($str))
+        );        
+    }
     $out = '';
+    $str = (string) $str;
     $len = strlen($str);
     $map = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
     for ($i = 0; $i < $len; $i += 3)  {
@@ -48,6 +55,13 @@ function base64encode($str)
  */
 function base64decode($str)
 {
+    if (!is_scalar($str)) {
+        throw new \InvalidArgumentException(
+            sprintf('base64encode() expects parameter 1 to be string %s given', gettype($str))
+        );        
+    }
+
+    $str = (string) $str;
     $len = strlen($str);
     if ($len % 4 !== 0) {
         throw new \InvalidArgumentException('Invalid base64 string given');

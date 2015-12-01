@@ -51,20 +51,84 @@ class MathsTest extends TestCase
         $this->assertEquals(40320, factorial(8), 'factorial of 8 (8!)');
     }
 
-    public function testFibonacci()
+    public function testFibonacciLoader()
     {
         $this->load('maths.fibonacci');
 
-        $this->assertEquals(5, fibonacci(5), '5th fibonacci');
-        // $this->assertEquals(1, fibonacci(-5), '-5th fibonacci');
-        $this->assertEquals(21, fibonacci(8), '8th fibonacci');
+        $this->assertTrue(function_exists('fibonacci'));
+        $this->assertTrue(function_exists('fibonacci_series'));
     }
 
-    public function testGreaestCommonDivisor()
+    /**
+     * @depends testFibonacciLoader
+     */
+    public function testFibonacci()
+    {
+        $this->assertEquals(5, fibonacci(5), '5th fibonacci');
+        $this->assertEquals(21, fibonacci(8), '8th fibonacci');
+
+        $this->assertEquals(5, fibonacci(-5), '-5th fibonacci');
+        $this->assertEquals(0 - fibonacci(8), fibonacci(-8), '-8th fibonacci');
+    }
+
+    /**
+     * @depends testFibonacciLoader
+     */
+    public function testFibonacciSeries()
+    {
+        $expected = [0, 1, 1, 2, 3];
+        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected)));
+
+        $expected = [0, 1, 1, 2, 3, 5, 8, 13, 21];
+        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected)));
+    }
+
+    public function testGreatestCommonDivisor()
     {
         $this->load('maths.greatest_common_divisor');
 
         $this->assertEquals(5, greatest_common_divisor(10, 15), 'gcd(10, 15)');
         $this->assertEquals(6, greatest_common_divisor(12, 18), 'gcd(12, 18)');
+    }
+
+    public function testPrimeLoader()
+    {
+        $this->load('maths.primes');
+
+        $this->assertTrue(function_exists('prime'));
+        $this->assertTrue(function_exists('primes'));
+        $this->assertTrue(function_exists('is_prime'));
+    }
+
+    /**
+     * @depends testPrimeLoader
+     */
+    public function testPrime()
+    {
+        $this->assertEquals(2, prime(1), '1st prime number');
+        $this->assertEquals(29, prime(10), '10th prime number');
+        $this->assertEquals(7919, prime(1000), '1000th prime number');
+    }
+
+    /**
+     * @depends testPrimeLoader
+     */
+    public function testPrimes()
+    {
+        $expected = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+        $this->assertEquals($expected, primes(count($expected)), sprintf('1st %d prime numbers', count($expected)));
+
+        $expected = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71];
+        $this->assertEquals($expected, primes(count($expected)), sprintf('1st %d prime numbers', count($expected)));
+    }
+
+    /**
+     * @depends testPrimeLoader
+     */
+    public function testIsPrime()
+    {
+        $this->assertEquals(false, is_prime(10), '10 is not prime number');
+        $this->assertTrue(is_prime(13), '13 is prime number');
+        $this->assertFalse(is_prime(100), '100 is not prime number');
     }
 }

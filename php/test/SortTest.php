@@ -49,6 +49,8 @@ class SortTest extends TestCase
     protected function doTest($testcase, $cycles = 2)
     {
         $this->load('sort.'.$testcase);
+        $sortFunc = $testcase.'_sort';
+        $this->assertTrue(function_exists($sortFunc));
 
         while ($cycles--) {
             $expected = $list = range(
@@ -57,7 +59,6 @@ class SortTest extends TestCase
             );
 
             shuffle($list);
-            $sortFunc = $testcase.'_sort';
             $actual = $sortFunc($list);
 
             $this->assertEquals($expected, $actual, "$sortFunc test with range($a, $b)");

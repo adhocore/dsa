@@ -9,7 +9,9 @@
  */
 function fibonacci($n)
 {
-    if ($n == 0) {
+    if ($n < 0) {
+        return ($n % 2) ? fibonacci(-$n) : 0 - fibonacci(-$n);
+    } elseif ($n == 0) {
         return 0;
     } elseif ($n == 1 or $n == 2) {
         return 1;
