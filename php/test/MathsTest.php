@@ -64,6 +64,7 @@ class MathsTest extends TestCase
      */
     public function testFibonacci()
     {
+        $this->assertEquals(0, fibonacci(0), '0th fibonacci');
         $this->assertEquals(5, fibonacci(5), '5th fibonacci');
         $this->assertEquals(21, fibonacci(8), '8th fibonacci');
 
@@ -77,10 +78,16 @@ class MathsTest extends TestCase
     public function testFibonacciSeries()
     {
         $expected = [0, 1, 1, 2, 3];
-        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected)));
+        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected) - 1));
+
+        $expected = [0, 1];
+        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected) - 1));
 
         $expected = [0, 1, 1, 2, 3, 5, 8, 13, 21];
-        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected)));
+        $this->assertEquals($expected, fibonacci_series(count($expected) - 1), sprintf('1st %d fibonacci_series', count($expected) - 1));
+
+        $expected = [-5 => 5, -4 => -3, -3 => 2, -2 => -1, -1 => 1, 0 => 0];
+        $this->assertEquals($expected, fibonacci_series(-5), sprintf('1st %d fibonacci_series', -5));
     }
 
     public function testGreatestCommonDivisor()

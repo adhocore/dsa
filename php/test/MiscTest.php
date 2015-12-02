@@ -71,5 +71,6 @@ class MiscTest extends TestCase
         $this->assertTrue(is_palindrome('LiRrIl'), 'w/ case');
         $this->assertFalse(is_palindrome('l ir il', true), 'with consider whitespace');
         $this->assertTrue(is_palindrome('l ir il', false), 'with ignore whitespace');
+        $this->assertTrue(is_palindrome('Madam im Adam', false), 'w/ case and ignore whitespace');
     }
 }

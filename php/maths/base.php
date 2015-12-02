@@ -6,11 +6,11 @@
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  * 
- * @param string $num     Numeric string.
- * @param int    $tobase  To base
- * @param int    $tobase  From base (defaults to 10)
+ * @param string $num      Numeric string.
+ * @param int    $tobase   To base
+ * @param int    $frombase From base (defaults to 10)
  * 
- * @return string         The number with converted base
+ * @return string          The number with converted base
  */
 function convert_base($num, $tobase, $frombase = 10)
 {
