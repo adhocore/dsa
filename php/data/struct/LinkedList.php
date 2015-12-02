@@ -81,4 +81,14 @@ class LinkedList
 
         return $current;
     }
+
+    /**
+     * Count the list items.
+     * 
+     * @return int The count of items  
+     */
+    public function count()
+    {
+        return $this->count;
+    }
 }

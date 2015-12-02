@@ -43,4 +43,14 @@ class Stack
     {
         return end($this->stack);
     }
+
+    /**
+     * Count the stack items.
+     * 
+     * @return int The count of items  
+     */
+    public function count()
+    {
+        return count($this->stack);
+    }
 }

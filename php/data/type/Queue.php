@@ -33,4 +33,14 @@ class Queue
     {
         return array_shift($this->queue);
     }
+
+    /**
+     * Count the queue items.
+     * 
+     * @return int The count of items  
+     */
+    public function count()
+    {
+        return count($this->queue);
+    }
 }
