@@ -30,6 +30,7 @@ class StructTest extends TestCase
         $this->assertEquals($b, $l->get($j)->data);
 
         $this->assertSame($lj, $li->next);
+        $this->assertEquals(null, $lj->next);
     }
 
     public function testDoublyLinkedList()
@@ -53,5 +54,7 @@ class StructTest extends TestCase
 
         $this->assertSame($lj, $li->next);
         $this->assertSame($li, $lj->prev);
+        $this->assertEquals(null, $lj->next);
+        $this->assertEquals(null, $li->prev);
     }
 }
