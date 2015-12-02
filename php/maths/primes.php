@@ -43,7 +43,9 @@ function primes($n)
  */
 function prime($n)
 {
-    return end(primes($n));
+    $primes = primes($n);
+
+    return end($primes);
 }
 
 
