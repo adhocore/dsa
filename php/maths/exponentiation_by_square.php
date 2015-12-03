@@ -1,15 +1,24 @@
 <?php
 
 /**
- * exponentiation_by_square. https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+ * exponentiation_by_square. 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Exponentiation_by_squaring.
  *
- * @param int $x  The base
- * @param int $n  The exponent
+ * @param  int $x The base
+ * @param  int $n The exponent
  *
  * @return float  The value of $x raised to the power $n
+ * 
+ * @throws InvalidArgumentException If input is not valid number
  */
 function exponentiation_by_square($x, $n)
 {
+    if (!($a = is_numeric($x)) or !is_numeric($n)) {
+        throw new \InvalidArgumentException(
+            sprintf('%s is not valid number', $a ? $x : $n)
+        );
+    }
     if ($n < 0) {
         return exponentiation_by_square(1 / $x, -$n);
     } elseif ($n == 0) {

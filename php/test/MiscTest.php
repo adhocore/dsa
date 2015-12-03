@@ -55,6 +55,24 @@ class MiscTest extends TestCase
         );
     }
 
+    /**
+     * @depends testBase64loader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBase65encodeException()
+    {
+        base64encode([]);
+    }
+
+    /**
+     * @depends testBase64loader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBase65decodeException()
+    {
+        base64decode(new \stdClass());
+    }
+
     public function testPalindromeloader()
     {
         $this->load('misc.palindrome');
@@ -72,5 +90,14 @@ class MiscTest extends TestCase
         $this->assertFalse(is_palindrome('l ir il', true), 'with consider whitespace');
         $this->assertTrue(is_palindrome('l ir il', false), 'with ignore whitespace');
         $this->assertTrue(is_palindrome('Madam im Adam', false), 'w/ case and ignore whitespace');
+    }
+
+    /**
+     * @depends testPalindromeloader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testIsPalindromeException()
+    {
+        is_palindrome([]);
     }
 }

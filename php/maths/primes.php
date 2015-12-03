@@ -11,9 +11,14 @@
  * @param  int   The number of prime numbers to generate
  *
  * @return array The generated prime numbers
+ *
+ * @throws InvalidArgumentException  If input is not positive integer
  */
 function primes($n)
 {
+    if (!is_numeric($n) or $n < 1) {
+        throw new \InvalidArgumentException(sprintf('Expecting positive integer, got %s', $n));
+    }
     static $p = [2];
     if (isset($p[$n - 1])) {
         return array_slice($p, 0, $n);
@@ -37,9 +42,12 @@ function primes($n)
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
- * @param  int   The position in prime number series
+ * @uses   self.primes()
+ * @param  int  The position in prime number series
  *
- * @return int   The generated prime number
+ * @return int  The generated prime number
+ *
+ * @throws InvalidArgumentException  If input is not positive integer
  */
 function prime($n)
 {
@@ -48,18 +56,28 @@ function prime($n)
     return end($primes);
 }
 
-
 /**
- * Checks if a number is prime
+ * Checks if a number is prime.
  * 
- * @param  int  $x  
+ * @param  int $x
  * 
- * @return boolean    True if prime, false otherwise
+ * @return bool True if prime, false otherwise
+ *
+ * @throws InvalidArgumentException  If input is not positive integer
  */
 function is_prime($x)
 {
+    if (!is_numeric($x) or $x < 1) {
+        throw new \InvalidArgumentException(sprintf('Expecting positive integer, got %s', $x));
+    }
+    if ($x == 1) {
+        return false;
+    }
+    if ($x == 2 or $x == 3) {
+        return true;
+    }
     $s = round(sqrt($x));
-    for ($i = 2; $i <= $s; $i++) {
+    for ($i = 2; $i <= $s; ++$i) {
         if ($x % $i == 0) {
             return false;
         }

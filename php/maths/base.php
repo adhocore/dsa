@@ -5,12 +5,14 @@
  * Note: Native support exists http://php.net/base_convert.
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
+ *
+ * @param  string $num      Numeric string.
+ * @param  int    $tobase   To base
+ * @param  int    $frombase From base (defaults to 10)
  * 
- * @param string $num      Numeric string.
- * @param int    $tobase   To base
- * @param int    $frombase From base (defaults to 10)
+ * @return string           The number with converted base
  * 
- * @return string          The number with converted base
+ * @throws InvalidArgumentException  If input string or base is invalid
  */
 function convert_base($num, $tobase, $frombase = 10)
 {

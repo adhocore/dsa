@@ -1,7 +1,9 @@
 <?php
 
 /**
- * shell_sort: https://en.wikipedia.org/wiki/Shellsort
+ * shell_sort: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Shellsort
  *
  * @param  array $list The unordered list of numbers
  *

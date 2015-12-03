@@ -19,7 +19,9 @@ class SinglyNode
 }
 
 /**
- * Class LinkedList. https://en.wikipedia.org/wiki/Linked_list.
+ * Class LinkedList. 
+ * 
+ * @link https://en.wikipedia.org/wiki/Linked_list.
  */
 class LinkedList
 {

@@ -1,7 +1,9 @@
 <?php
 
 /**
- * insertion_sort: https://en.wikipedia.org/wiki/Insertion_sort
+ * insertion_sort: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Insertion_sort
  *
  * @param  array $list The unordered list of numbers
  *

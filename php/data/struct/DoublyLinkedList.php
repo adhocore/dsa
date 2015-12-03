@@ -22,7 +22,9 @@ class DoublyNode
 }
 
 /**
- * Class DoublyLinkedList. https://en.wikipedia.org/wiki/Doubly_linked_list.
+ * Class DoublyLinkedList. 
+ * 
+ * @link https://en.wikipedia.org/wiki/Doubly_linked_list.
  */
 class DoublyLinkedList
 {

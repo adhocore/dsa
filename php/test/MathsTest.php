@@ -41,6 +41,26 @@ class MathsTest extends TestCase
 
         $this->assertEquals(16, exponentiation_by_square(2, 4), '2 to the power 4');
         $this->assertEquals(pow(3, 3), exponentiation_by_square(3, 3), '3 to the power 3');
+        $this->assertEquals(1, exponentiation_by_square(rand(1, 100), 0), '* to the power 0');
+        $this->assertEquals(1 / 2, exponentiation_by_square(2, -1), '2 to the power -1');
+    }
+
+    /**
+     * @depends testExponentiation
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExponentiationException()
+    {
+        exponentiation_by_square('str', 2);
+    }
+
+    /**
+     * @depends testExponentiation
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExponentiationException2()
+    {
+        exponentiation_by_square(2, 'str');
     }
 
     public function testFactorial()
@@ -49,6 +69,15 @@ class MathsTest extends TestCase
 
         $this->assertEquals(5 * 4 * 3 * 2 * 1, factorial(5), 'factorial of 5 (5!)');
         $this->assertEquals(40320, factorial(8), 'factorial of 8 (8!)');
+    }
+
+    /**
+     * @depends testFactorial
+     * @expectedException \InvalidArgumentException
+     */
+    public function testFactorialException()
+    {
+        factorial('str');
     }
 
     public function testFibonacciLoader()
@@ -90,12 +119,48 @@ class MathsTest extends TestCase
         $this->assertEquals($expected, fibonacci_series(-5), sprintf('1st %d fibonacci_series', -5));
     }
 
+    /**
+     * @depends testFibonacciLoader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testFibonacciException()
+    {
+        fibonacci('str');
+    }
+
+    /**
+     * @depends testFibonacciLoader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testFibonacciSeriesException()
+    {
+        fibonacci_series('str');
+    }
+
     public function testGreatestCommonDivisor()
     {
         $this->load('maths.greatest_common_divisor');
 
         $this->assertEquals(5, greatest_common_divisor(10, 15), 'gcd(10, 15)');
         $this->assertEquals(6, greatest_common_divisor(12, 18), 'gcd(12, 18)');
+    }
+
+    /**
+     * @depends testGreatestCommonDivisor
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGreatestCommonDivisorException()
+    {
+        greatest_common_divisor('str', 5);
+    }
+
+    /**
+     * @depends testGreatestCommonDivisor
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGreatestCommonDivisorException2()
+    {
+        greatest_common_divisor(5, 'str');
     }
 
     public function testPrimeLoader()
@@ -105,6 +170,15 @@ class MathsTest extends TestCase
         $this->assertTrue(function_exists('prime'));
         $this->assertTrue(function_exists('primes'));
         $this->assertTrue(function_exists('is_prime'));
+    }
+
+    /**
+     * @depends testPrimeLoader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testPrimeException()
+    {
+        prime('str');
     }
 
     /**
@@ -136,6 +210,25 @@ class MathsTest extends TestCase
     {
         $this->assertEquals(false, is_prime(10), '10 is not prime number');
         $this->assertTrue(is_prime(13), '13 is prime number');
-        $this->assertFalse(is_prime(100), '100 is not prime number');
+        $this->assertFalse(is_prime(100), '100 is prime number');
+        $this->assertTrue(!is_prime(1), '1 is not prime number');
+    }
+
+    /**
+     * @depends testPrimeLoader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testPrimesException()
+    {
+        primes('str');
+    }
+
+    /**
+     * @depends testPrimeLoader
+     * @expectedException \InvalidArgumentException
+     */
+    public function testIsPrimeException()
+    {
+        is_prime('str');
     }
 }

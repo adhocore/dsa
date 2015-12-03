@@ -1,7 +1,9 @@
 <?php
 
 /**
- * binary_search: https://en.wikipedia.org/wiki/Binary_search_algorithm
+ * binary_search: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Binary_search_algorithm
  *
  * @param  array $list The ordered list of items
  * @param  mixed $item The lookup item

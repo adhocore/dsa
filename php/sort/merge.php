@@ -1,7 +1,9 @@
 <?php
 
 /**
- * merge_sort: https://en.wikipedia.org/wiki/Merge_sort
+ * merge_sort: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Merge_sort
  *
  * @param  array $list The unordered list of numbers
  *

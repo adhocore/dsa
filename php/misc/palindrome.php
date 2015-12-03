@@ -3,13 +3,20 @@
 /**
  * Tests if a string is palindrome.
  * 
- * @param  [type]  $str The string to test
- * @param  boolean $ws  Consider Whitespace or not (default true)
+ * @param  string $str The string to test
+ * @param  bool   $ws  Consider Whitespace or not (default true)
  * 
- * @return boolean      True if palindrome, false if not
+ * @return bool        True if palindrome, false if not
+ *
+ * @throws InvalidArgumentException If input is invalid
  */
 function is_palindrome($str, $ws = true)
 {
+    if (!is_string($str)) {
+        throw new \InvalidArgumentException(
+            sprintf('Expected string, got %s', gettype($str))
+        );
+    }
     if (!$ws) {
         $str = preg_replace('/\s+/', '', $str);
     }

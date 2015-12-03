@@ -1,7 +1,9 @@
 <?php
 
 /**
- * bucket_sort: https://en.wikipedia.org/wiki/Bucket_sort
+ * bucket_sort: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Bucket_sort
  *
  * @param  array $list The unordered list of numbers
  *

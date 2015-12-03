@@ -1,11 +1,13 @@
 <?php
 
 /**
- * quick_sort: https://en.wikipedia.org/wiki/Quicksort.
+ * quick_sort: 
+ * 
+ * @link   https://en.wikipedia.org/wiki/Quicksort.
  *
- * @param array $list The unordered list of numbers
+ * @param  array $list The unordered list of numbers
  *
- * @return array      The ordered list of numbers
+ * @return array       The ordered list of numbers
  */
 function quick_sort(array $list)
 {
