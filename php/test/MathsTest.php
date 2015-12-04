@@ -15,6 +15,53 @@ class MathsTest extends TestCase
             convert_base('1111', 10, 2),
             'convert 1111 to base 10 from base 2 [assert against native base_convert()]'
         );
+
+        // cross assertion
+        $this->assertEquals(
+            '123123',
+            convert_base(convert_base('123123', 2, 4), 4, 2),
+            'cross assert 123123'
+        );
+        $this->assertEquals(
+            'ABC',
+            convert_base(convert_base('ABC', 16, 24), 24, 16),
+            'cross assert ABC'
+        );
+        $this->assertEquals(
+            '273615',
+            convert_base(convert_base('273615', 32, 8), 8, 32),
+            'cross assert 273615'
+        );
+
+        $map = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $len = strlen($map) + 1;
+        // frombase
+        for ($i = 2; $i < $len; ++$i) {
+            $pool = substr($map, 0, $i);
+            // tobase
+            for ($j = 2; $j < $len; ++$j) {
+                $num = '';
+                $size = rand(1, ($i > 9 or $j > 9) ? 5 : 8);
+                while ($size--) {
+                    $num .= substr($pool, mt_rand(0, strlen($pool) - 1), 1);
+                }
+
+                // validate
+                $num = ltrim($num, '0');
+                if (empty($num)) {
+                    continue;
+                }
+                $actual = convert_base($num, $j, $i);
+                $expected = base_convert($num, $i, $j);
+
+                // assert
+                $this->assertEquals(
+                    strtolower($expected),
+                    strtolower($actual),
+                    sprintf('convert %s to base %d from base %d [assert against native base_convert()]', $num, $j, $i)
+                );
+            }
+        }
     }
 
     /**
@@ -69,6 +116,8 @@ class MathsTest extends TestCase
 
         $this->assertEquals(5 * 4 * 3 * 2 * 1, factorial(5), 'factorial of 5 (5!)');
         $this->assertEquals(40320, factorial(8), 'factorial of 8 (8!)');
+        $this->assertEquals(1, factorial(0), 'factorial of 0 (0!)');
+        $this->assertEquals(1, factorial(1), 'factorial of 0 (1!)');
     }
 
     /**

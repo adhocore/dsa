@@ -61,9 +61,9 @@ function base64encode($str)
  */
 function base64decode($str)
 {
-    if (!is_scalar($str)) {
+    if (!is_string($str)) {
         throw new \InvalidArgumentException(
-            sprintf('base64encode() expects parameter 1 to be string %s given', gettype($str))
+            sprintf('base64decode() expects parameter 1 to be string %s given', gettype($str))
         );
     }
 
