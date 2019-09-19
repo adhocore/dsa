@@ -1,14 +1,14 @@
 <?php
 
 /**
- * binary_search: 
- * 
+ * binary_search:.
+ *
  * @link   https://en.wikipedia.org/wiki/Binary_search_algorithm
  *
- * @param  array $list The ordered list of items
- * @param  mixed $item The lookup item
+ * @param array $list The ordered list of items
+ * @param mixed $item The lookup item
  *
- * @return mixed       The index of item if success, null otherwise
+ * @return mixed The index of item if success, null otherwise
  */
 function binary_search(array $list, $item)
 {

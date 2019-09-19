@@ -1,22 +1,22 @@
 <?php
 
 /**
- * shell_sort: 
- * 
+ * shell_sort:.
+ *
  * @link   https://en.wikipedia.org/wiki/Shellsort
  *
- * @param  array $list The unordered list of numbers
+ * @param array $list The unordered list of numbers
  *
- * @return array       The ordered list of numbers
+ * @return array The ordered list of numbers
  */
 function shell_sort(array $list)
 {
     $it = round(count($list) / 2);
 
     while ($it > 0) {
-        for ($i = $it; $i < count($list); ++$i) {
+        for ($i = $it; $i < count($list); $i++) {
             $ins = $list[$i];
-            $j = $i;
+            $j   = $i;
             while ($j >= $it and $list[$j - $it] > $ins) {
                 $list[$j] = $list[$j - $it];
                 $j -= $it;

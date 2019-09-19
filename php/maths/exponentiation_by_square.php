@@ -1,16 +1,16 @@
 <?php
 
 /**
- * exponentiation_by_square. 
- * 
+ * exponentiation_by_square.
+ *
  * @link   https://en.wikipedia.org/wiki/Exponentiation_by_squaring.
  *
- * @param  int $x The base
- * @param  int $n The exponent
+ * @param int $x The base
+ * @param int $n The exponent
  *
- * @return float  The value of $x raised to the power $n
- * 
  * @throws InvalidArgumentException If input is not valid number
+ *
+ * @return float The value of $x raised to the power $n
  */
 function exponentiation_by_square($x, $n)
 {

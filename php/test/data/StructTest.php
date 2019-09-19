@@ -2,11 +2,11 @@
 
 namespace test\data;
 
-use test\TestCase;
-use data\struct\SinglyNode as SN;
+use data\struct\DoublyLinkedList as DLL;
 use data\struct\DoublyNode as DN;
 use data\struct\LinkedList as LL;
-use data\struct\DoublyLinkedList as DLL;
+use data\struct\SinglyNode as SN;
+use test\TestCase;
 
 class StructTest extends TestCase
 {

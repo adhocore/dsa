@@ -6,13 +6,13 @@
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
- * @param  string $num      Numeric string.
- * @param  int    $tobase   To base
- * @param  int    $frombase From base (defaults to 10)
- * 
- * @return string           The number with converted base
- * 
- * @throws InvalidArgumentException  If input string or base is invalid
+ * @param string $num      Numeric string.
+ * @param int    $tobase   To base
+ * @param int    $frombase From base (defaults to 10)
+ *
+ * @throws InvalidArgumentException If input string or base is invalid
+ *
+ * @return string The number with converted base
  */
 function convert_base($num, $tobase, $frombase = 10)
 {
@@ -49,5 +49,5 @@ function convert_base($num, $tobase, $frombase = 10)
         return $map[(int) $num];
     }
 
-    return convert_base(floor($num / $tobase), $tobase).$map[$num % $tobase];
+    return convert_base(floor($num / $tobase), $tobase) . $map[$num % $tobase];
 }
