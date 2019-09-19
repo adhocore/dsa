@@ -48,8 +48,8 @@ class SortTest extends TestCase
 
     protected function doTest($testcase, $cycles = 2)
     {
-        $this->load('sort.'.$testcase);
-        $sortFunc = $testcase.'_sort';
+        $this->load('sort.' . $testcase);
+        $sortFunc = $testcase . '_sort';
         $this->assertTrue(function_exists($sortFunc));
 
         while ($cycles--) {

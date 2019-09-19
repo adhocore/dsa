@@ -1,15 +1,15 @@
 <?php
 
 /**
- * fibonacci. 
- * 
+ * fibonacci.
+ *
  * @link   https://en.wikipedia.org/wiki/Fibonacci_number.
  *
- * @param  int $n The position of series
+ * @param int $n The position of series
  *
- * @return int    The $nth number in fibonacci series
+ * @throws InvalidArgumentException If input is not valid number
  *
- * @throws InvalidArgumentException  If input is not valid number
+ * @return int The $nth number in fibonacci series
  */
 function fibonacci($n)
 {
@@ -30,18 +30,18 @@ function fibonacci($n)
 }
 
 /**
- * fibonacci_series. 
+ * fibonacci_series.
  * Uses static stack ($fs) for memoization to accelerate subsquent calls.
- * 
+ *
  * @link https://en.wikipedia.org/wiki/Fibonacci_number
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
- * @param  int $n  The number of fibonacci to generate
+ * @param int $n The number of fibonacci to generate
  *
- * @return array   The list with n fibonacci numbers
+ * @throws InvalidArgumentException If input is not valid number
  *
- * @throws InvalidArgumentException  If input is not valid number
+ * @return array The list with n fibonacci numbers
  */
 function fibonacci_series($n)
 {

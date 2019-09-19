@@ -3,16 +3,16 @@
 /**
  * Alternative prime number generator.
  *
- * Generates first <n> prime numbers using 
+ * Generates first <n> prime numbers using
  * the prime numbers themselves
  *
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
  * @param  int   The number of prime numbers to generate
  *
- * @return array The generated prime numbers
+ * @throws InvalidArgumentException If input is not positive integer
  *
- * @throws InvalidArgumentException  If input is not positive integer
+ * @return array The generated prime numbers
  */
 function primes($n)
 {
@@ -43,11 +43,12 @@ function primes($n)
  * @author Jitendra Adhikari <jiten.adhikary@gmail.com>
  *
  * @uses   self.primes()
+ *
  * @param  int  The position in prime number series
  *
- * @return int  The generated prime number
+ * @throws InvalidArgumentException If input is not positive integer
  *
- * @throws InvalidArgumentException  If input is not positive integer
+ * @return int The generated prime number
  */
 function prime($n)
 {
@@ -58,12 +59,12 @@ function prime($n)
 
 /**
  * Checks if a number is prime.
- * 
- * @param  int $x
- * 
- * @return bool True if prime, false otherwise
  *
- * @throws InvalidArgumentException  If input is not positive integer
+ * @param int $x
+ *
+ * @throws InvalidArgumentException If input is not positive integer
+ *
+ * @return bool True if prime, false otherwise
  */
 function is_prime($x)
 {
@@ -77,7 +78,7 @@ function is_prime($x)
         return true;
     }
     $s = round(sqrt($x));
-    for ($i = 2; $i <= $s; ++$i) {
+    for ($i = 2; $i <= $s; $i++) {
         if ($x % $i == 0) {
             return false;
         }

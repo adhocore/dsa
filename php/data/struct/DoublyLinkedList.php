@@ -22,8 +22,8 @@ class DoublyNode
 }
 
 /**
- * Class DoublyLinkedList. 
- * 
+ * Class DoublyLinkedList.
+ *
  * @link https://en.wikipedia.org/wiki/Doubly_linked_list.
  */
 class DoublyLinkedList
@@ -39,11 +39,11 @@ class DoublyLinkedList
     }
 
     /**
-     * Adds a node to the list
-     * 
-     * @param  mixed $item
-     * 
-     * @return int         The size of list
+     * Adds a node to the list.
+     *
+     * @param mixed $item
+     *
+     * @return int The size of list
      */
     public function add($item)
     {
@@ -61,18 +61,18 @@ class DoublyLinkedList
             $current = $current->next;
         }
 
-        $item->prev = $current;
+        $item->prev    = $current;
         $current->next = $item;
 
         return $this->count++;
     }
 
     /**
-     * Gets a node at given index
-     * 
-     * @param  int $index
-     * 
-     * @return DoublyNode|null  Node if exist, or null
+     * Gets a node at given index.
+     *
+     * @param int $index
+     *
+     * @return DoublyNode|null Node if exist, or null
      */
     public function get($index)
     {
@@ -90,8 +90,8 @@ class DoublyLinkedList
 
     /**
      * Count the list items.
-     * 
-     * @return int The count of items  
+     *
+     * @return int The count of items
      */
     public function count()
     {

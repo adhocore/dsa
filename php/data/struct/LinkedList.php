@@ -19,8 +19,8 @@ class SinglyNode
 }
 
 /**
- * Class LinkedList. 
- * 
+ * Class LinkedList.
+ *
  * @link https://en.wikipedia.org/wiki/Linked_list.
  */
 class LinkedList
@@ -36,11 +36,11 @@ class LinkedList
     }
 
     /**
-     * Adds a node to the list
-     * 
-     * @param  mixed $item
-     * 
-     * @return int         The size of list
+     * Adds a node to the list.
+     *
+     * @param mixed $item
+     *
+     * @return int The size of list
      */
     public function add($item)
     {
@@ -64,11 +64,11 @@ class LinkedList
     }
 
     /**
-     * Gets a node at given index
-     * 
-     * @param  int $index
-     * 
-     * @return SinglyNode|null  Node if exist, or null
+     * Gets a node at given index.
+     *
+     * @param int $index
+     *
+     * @return SinglyNode|null Node if exist, or null
      */
     public function get($index)
     {
@@ -86,8 +86,8 @@ class LinkedList
 
     /**
      * Count the list items.
-     * 
-     * @return int The count of items  
+     *
+     * @return int The count of items
      */
     public function count()
     {

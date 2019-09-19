@@ -2,9 +2,9 @@
 
 namespace test\data;
 
-use test\TestCase;
 use data\type\Queue;
 use data\type\Stack;
+use test\TestCase;
 
 class TypeTest extends TestCase
 {

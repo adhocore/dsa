@@ -2,13 +2,13 @@
 
 /**
  * Tests if a string is palindrome.
- * 
- * @param  string $str The string to test
- * @param  bool   $ws  Consider Whitespace or not (default true)
- * 
- * @return bool        True if palindrome, false if not
+ *
+ * @param string $str The string to test
+ * @param bool   $ws  Consider Whitespace or not (default true)
  *
  * @throws InvalidArgumentException If input is invalid
+ *
+ * @return bool True if palindrome, false if not
  */
 function is_palindrome($str, $ws = true)
 {

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Base64 encode. 
- * 
+ * Base64 encode.
+ *
  * @link   https://en.wikipedia.org/wiki/Base64.
  *
- * @param  string $str The input string
- * 
- * @return string      The base64 encoded string
- * 
+ * @param string $str The input string
+ *
  * @throws InvalidArgumentException If input string is invalid
+ *
+ * @return string The base64 encoded string
  */
 function base64encode($str)
 {
@@ -49,15 +49,15 @@ function base64encode($str)
 }
 
 /**
- * Base64 decode. 
- * 
+ * Base64 decode.
+ *
  * @link   https://en.wikipedia.org/wiki/Base64.
  *
- * @param  string $str The input base64 string
- * 
- * @return string      The base64 decoded string
- * 
+ * @param string $str The input base64 string
+ *
  * @throws InvalidArgumentException If input string is invalid
+ *
+ * @return string The base64 decoded string
  */
 function base64decode($str)
 {

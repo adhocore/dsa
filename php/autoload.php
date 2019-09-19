@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Register class autoloader with a closure
+ * Register class autoloader with a closure.
  */
 spl_autoload_register(function ($class) {
     $class = trim($class, '\\');
@@ -11,11 +11,11 @@ spl_autoload_register(function ($class) {
 });
 
 /**
- * Loads a file in `/dsa/php/` path
- * 
- * @param  string $file Relative file path/name
- * 
- * @return boolean      True if success, false otherwise
+ * Loads a file in `/dsa/php/` path.
+ *
+ * @param string $file Relative file path/name
+ *
+ * @return bool True if success, false otherwise
  */
 function load_file($file)
 {
@@ -30,15 +30,15 @@ function load_file($file)
 }
 
 /**
- * Resolves full path of given relative file
- * 
- * @param  string $file Relative file path/name
- * 
- * @return string|null  Full pathname if exists, null otherwise     
+ * Resolves full path of given relative file.
+ *
+ * @param string $file Relative file path/name
+ *
+ * @return string|null Full pathname if exists, null otherwise
  */
 function resolve_path($file)
 {
-    $path = __DIR__.'/'.str_replace(['.', '\\'], '/', $file).'.php';
+    $path = __DIR__ . '/' . str_replace(['.', '\\'], '/', $file) . '.php';
     if (is_file($path)) {
         return $path;
     }
