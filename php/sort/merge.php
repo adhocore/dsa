@@ -1,13 +1,13 @@
 <?php
 
 /**
- * merge_sort: 
- * 
+ * merge_sort:.
+ *
  * @link   https://en.wikipedia.org/wiki/Merge_sort
  *
- * @param  array $list The unordered list of numbers
+ * @param array $list The unordered list of numbers
  *
- * @return array       The ordered list of numbers
+ * @return array The ordered list of numbers
  */
 function merge_sort(array $list)
 {
@@ -15,10 +15,10 @@ function merge_sort(array $list)
         return $list;
     }
 
-    $left = merge_sort(array_slice($list, 0, floor(count($list) / 2)));
+    $left  = merge_sort(array_slice($list, 0, floor(count($list) / 2)));
     $right = merge_sort(array_slice($list, floor(count($list) / 2)));
 
-    $merged = array();
+    $merged = [];
     while (count($left) > 0 or count($right) > 0) {
         if (count($left) > 0 and count($right) > 0) {
             if ($left[0] <= $right[0]) {

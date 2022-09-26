@@ -16,7 +16,7 @@ class Stack
 
     /**
      * Push item to the stack.
-     * 
+     *
      * @param mixed $item
      */
     public function push($item)
@@ -26,8 +26,8 @@ class Stack
 
     /**
      * Pop the latest item off the stack, shortening the stack.
-     * 
-     * @return mixed $item 
+     *
+     * @return mixed $item
      */
     public function pop()
     {
@@ -36,7 +36,7 @@ class Stack
 
     /**
      * Check the latest item of the stack without removing.
-     * 
+     *
      * @return mixed $item
      */
     public function peek()
@@ -46,8 +46,8 @@ class Stack
 
     /**
      * Count the stack items.
-     * 
-     * @return int The count of items  
+     *
+     * @return int The count of items
      */
     public function count()
     {

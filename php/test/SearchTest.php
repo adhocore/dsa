@@ -34,9 +34,9 @@ class SearchTest extends TestCase
     {
         return [
             // name => [[list], item, expected]
-            'search fail' => [[1, 3, 5], 10, null],
-            'search ok #integer data' => [[1, 3, 5, 7, 9], 7, 3],
-            'search ok #mixed data' => [[1, '3', 5, '7', 9, '11'], '11', 5],
+            'search fail'                 => [[1, 3, 5], 10, null],
+            'search ok #integer data'     => [[1, 3, 5, 7, 9], 7, 3],
+            'search ok #mixed data'       => [[1, '3', 5, '7', 9, '11'], '11', 5],
             'search ok #mixed assoc list' => [['apple', 'ball'], 'ball', 1],
         ];
     }

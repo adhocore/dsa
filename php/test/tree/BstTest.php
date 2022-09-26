@@ -29,25 +29,36 @@ class BstTest extends TestCase
         $bst = new BST();
         $this->assertInstanceOf(BST::class, $bst);
 
-        $bst->insert($root, $k1 = 12, $v1 = 'should go to left of root');
+        $bst->insert($root, $k1                     = 12, $v1                     = 'should go to left of root');
         $this->assertInstanceOf(Node::class, $left1 = $root->left);
         $this->assertEquals($v1, $left1->value);
 
-        $bst->insert($root, $k2 = 120, $v2 = 'should go to right of root');
+        $bst->insert($root, $k2                      = 120, $v2                      = 'should go to right of root');
         $this->assertInstanceOf(Node::class, $right1 = $root->right);
         $this->assertEquals($v2, $right1->value);
 
-        $bst->insert($right1, $k3 = 15, $v3 = 'should go to left of right1');
+        $bst->insert($right1, $k3                   = 15, $v3                   = 'should go to left of right1');
         $this->assertInstanceOf(Node::class, $left2 = $right1->left);
         $this->assertEquals($v3, $left2->value);
 
-        $bst->insert($left1, $k4 = 110, $v4 = 'should go to right of left1');
+        $bst->insert($left1, $k4                     = 110, $v4                     = 'should go to right of left1');
         $this->assertInstanceOf(Node::class, $right2 = $left1->right);
         $this->assertEquals($v4, $right2->value);
 
         return compact(
-            'root', 'right1', 'right2', 'left1', 'left2',
-            'v1', 'v2', 'v3', 'v4', 'k1', 'k2', 'k3', 'k4'
+            'root',
+            'right1',
+            'right2',
+            'left1',
+            'left2',
+            'v1',
+            'v2',
+            'v3',
+            'v4',
+            'k1',
+            'k2',
+            'k3',
+            'k4'
         );
     }
 

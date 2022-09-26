@@ -6,9 +6,9 @@
  * @param int $x The first number
  * @param int $y The second number
  *
- * @return int   The greated commmon divisor $x and $y
+ * @throws InvalidArgumentException If input is not valid number
  *
- * @throws InvalidArgumentException  If input is not valid number
+ * @return int The greated commmon divisor $x and $y
  */
 function greatest_common_divisor($x, $y)
 {

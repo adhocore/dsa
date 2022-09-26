@@ -36,11 +36,11 @@ class MathsTest extends TestCase
         $map = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $len = strlen($map) + 1;
         // frombase
-        for ($i = 2; $i < $len; ++$i) {
+        for ($i = 2; $i < $len; $i++) {
             $pool = substr($map, 0, $i);
             // tobase
-            for ($j = 2; $j < $len; ++$j) {
-                $num = '';
+            for ($j = 2; $j < $len; $j++) {
+                $num  = '';
                 $size = rand(1, ($i > 9 or $j > 9) ? 5 : 8);
                 while ($size--) {
                     $num .= substr($pool, mt_rand(0, strlen($pool) - 1), 1);
@@ -51,7 +51,7 @@ class MathsTest extends TestCase
                 if (empty($num)) {
                     continue;
                 }
-                $actual = convert_base($num, $j, $i);
+                $actual   = convert_base($num, $j, $i);
                 $expected = base_convert($num, $i, $j);
 
                 // assert
@@ -65,7 +65,7 @@ class MathsTest extends TestCase
     }
 
     /**
-     * @depends testConvertBase 
+     * @depends testConvertBase
      * @expectedException \InvalidArgumentException
      */
     public function testConvertBaseException()
@@ -74,7 +74,7 @@ class MathsTest extends TestCase
     }
 
     /**
-     * @depends testConvertBaseException 
+     * @depends testConvertBaseException
      * @expectedException \InvalidArgumentException
      */
     public function testConvertBaseException2()

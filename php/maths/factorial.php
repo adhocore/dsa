@@ -2,12 +2,12 @@
 
 /**
  * factorial.
- * 
- * @param  int $n The number to calculate factorial for
- * 
- * @return int    The factorial of $n
- * 
- * @throws InvalidArgumentException  If input is not valid number
+ *
+ * @param int $n The number to calculate factorial for
+ *
+ * @throws InvalidArgumentException If input is not valid number
+ *
+ * @return int The factorial of $n
  */
 function factorial($n)
 {

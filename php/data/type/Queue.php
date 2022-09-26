@@ -16,7 +16,7 @@ class Queue
 
     /**
      * Enqueue an item to the queue.
-     * 
+     *
      * @param mixed $item
      */
     public function enqueue($item)
@@ -26,8 +26,8 @@ class Queue
 
     /**
      * Dequeue the first item from the queue.
-     * 
-     * @return mixed The first item of the queue    
+     *
+     * @return mixed The first item of the queue
      */
     public function dequeue()
     {
@@ -36,8 +36,8 @@ class Queue
 
     /**
      * Count the queue items.
-     * 
-     * @return int The count of items  
+     *
+     * @return int The count of items
      */
     public function count()
     {

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * quick_sort: 
- * 
+ * quick_sort:.
+ *
  * @link   https://en.wikipedia.org/wiki/Quicksort.
  *
- * @param  array $list The unordered list of numbers
+ * @param array $list The unordered list of numbers
  *
- * @return array       The ordered list of numbers
+ * @return array The ordered list of numbers
  */
 function quick_sort(array $list)
 {
@@ -21,16 +21,16 @@ function quick_sort_pivot(&$list, $lo, $hi)
 {
     $i = $lo;
     $p = $list[$hi];
-    for ($j = $lo; $j < $hi; ++$j) {
+    for ($j = $lo; $j < $hi; $j++) {
         if ($list[$j] <= $p) {
-            $tmp = $list[$j];
+            $tmp      = $list[$j];
             $list[$j] = $list[$i];
             $list[$i] = $tmp;
-            $i = $i + 1;
+            $i        = $i + 1;
         }
     }
     $list[$hi] = $list[$i];
-    $list[$i] = $p;
+    $list[$i]  = $p;
 
     return $i;
 }
